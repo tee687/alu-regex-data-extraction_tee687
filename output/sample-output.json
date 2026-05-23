@@ -1,0 +1,22 @@
+{
+    "security_status": "Warning: Unsafe HTML tags found!",
+    "phone_numbers": [
+        "+250 795 597 511",
+        "+250-788-123-456",
+        "250795597511"
+    ],
+    "masked_credit_cards": [
+        "****-****-****-4444"
+    ],
+    "alu_emails": {
+        "official": [
+            "mavhenge@alueducation.com"
+        ],
+        "alumni": [
+            "t.mtakiwa@alumni.alueducation.com"
+        ],
+        "scholar_system": [
+            "williams@si.alueducation.com"
+        ]
+    }
+}
