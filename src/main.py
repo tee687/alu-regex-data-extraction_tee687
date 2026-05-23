@@ -1,17 +1,17 @@
 import json
 import re
 
-# 1. Open and read the messy text file simply
+# 1. Open and read the messy text file
 with open("input/raw-text.txt", "r") as file:
     raw_text = file.read()
 
-# 2. Straightforward Regular Expressions (Regex)
+# 2. regex patterns
 phone_pattern = r"\+?250[\s\-]?7\d{2}[\s\-]?\d{3}[\s\-]?\d{3}"
 email_pattern = r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
 card_pattern = r"\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}"
 html_pattern = r"<[^>]+>"
 
-# 3. Find all matches in the text
+# 3. Matching the patterns
 all_phones = re.findall(phone_pattern, raw_text)
 all_emails = re.findall(email_pattern, raw_text)
 all_cards = re.findall(card_pattern, raw_text)
@@ -30,7 +30,7 @@ for email in all_emails:
     elif email.endswith("@si.alueducation.com"):
         si_emails.append(email)
 
-# 5. Protect sensitive credit cards (Mask them)
+# 5. Protecting credit card numbers by masking all but the last 4 digits
 safe_cards = []
 for card in all_cards:
 
@@ -59,4 +59,4 @@ output_data = {
 with open("output/sample-output.json", "w") as out_file:
     json.dump(output_data, out_file, indent=4)
 
-print
+print("Data extraction and processing complete. Output saved to output/sample-output.json")
