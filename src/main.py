@@ -55,8 +55,36 @@ output_data = {
     },
 }
 
-# 8. Saving the data
+# 8. Print results to the terminal
+print("\n===== SECURITY STATUS =====")
+print(" ", security_message)
+
+print(f"\n===== PHONE NUMBERS ({len(all_phones)}) =====")
+for phone in all_phones:
+    print(" ", phone)
+
+print(f"\n===== MASKED CREDIT CARDS ({len(safe_cards)}) =====")
+for card in safe_cards:
+    print(" ", card)
+
+print(f"\n===== HTML TAGS ({len(all_html_tags)}) =====")
+for tag in all_html_tags:
+    print(" ", tag)
+
+print(f"\n===== ALU OFFICIAL EMAILS ({len(official_emails)}) =====")
+for email in official_emails:
+    print(" ", email)
+
+print(f"\n===== ALU ALUMNI EMAILS ({len(alumni_emails)}) =====")
+for email in alumni_emails:
+    print(" ", email)
+
+print(f"\n===== ALU SI EMAILS ({len(si_emails)}) =====")
+for email in si_emails:
+    print(" ", email)
+
+# 9. Saving the data
 with open("output/sample-output.json", "w") as out_file:
     json.dump(output_data, out_file, indent=4)
 
-print("Data extraction and processing complete. Output saved to output/sample-output.json")
+print("\nData extraction and processing complete. Output saved to output/sample-output.json")
